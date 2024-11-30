@@ -61,7 +61,7 @@ A classe `UserController` também inclui um método que lida com exceções de v
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/ecommerce-backend.git
+   git clone https://github.com/gabrieldebarross/ecommerce-backend.git
 
 2. Navegue até o diretório do projeto:
 
