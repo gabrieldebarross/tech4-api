@@ -42,4 +42,20 @@ public class UserService {
         repository.deleteById(id);
         return true;
     }
+
+    public Boolean validarSenha(UserModel usuario) {
+        // Se o ID do usuário for Integer e o método getById espera Long
+        Long usuarioId = Long.valueOf(usuario.getId()); // Converte Integer para Long
+        
+        // Obtém a senha criptografada do banco de dados
+        @SuppressWarnings("deprecation")
+        String senhaCriptografada = repository.getById(usuarioId).getPassword();
+        
+        // Verifica se a senha fornecida corresponde à senha criptografada
+        Boolean valid = passwordEncoder.matches(usuario.getPassword(), senhaCriptografada);
+        
+        return valid;
+    }
+    
+    
 }
